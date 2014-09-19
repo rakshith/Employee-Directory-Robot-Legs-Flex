@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/mx"
+		title="Login">
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		<mx:StringValidator id="empIdStringValidator"
+							source="{usrName}"
+							property="text"
+							required="true"
+							minLength="3"
+							tooShortError="The User Name must be at least 3 characters."
+							requiredFieldError="The User Name is a required field."/>
+		
+		<mx:StringValidator id="passwdStringValidator"
+							source="{passwd}"
+							property="text"
+							required="true"
+							requiredFieldError="The Password is a required field."/>
+	</fx:Declarations>
+	
+	<s:navigationContent/>
+	
+	<s:layout>
+		<s:VerticalLayout gap="0"
+						  paddingLeft="0"
+						  paddingRight="0"
+						  paddingTop="0"
+						  paddingBottom="0"
+						  horizontalAlign="right"/>
+	</s:layout>
+	
+	<s:VGroup width="100%"
+			  gap="5"
+			  paddingLeft="20"
+			  paddingRight="20"
+			  paddingTop="20"
+			  paddingBottom="20"
+			  horizontalAlign="right">
+		
+		<s:Label text="User Name"
+				 width="100%"/>
+		<s:TextInput id="usrName" 
+					 width="100%"
+					 returnKeyLabel="done"
+					 autoCapitalize="none"/>				
+		
+		
+		
+			<s:Label text="Password"
+					 width="100%"/>
+			<s:TextInput id="passwd"
+						 width="100%"
+						 maxChars="16"
+						 displayAsPassword="true"
+						 returnKeyLabel="done"
+						 autoCapitalize="none"
+						 autoCorrect="false"/>				
+		
+		<s:Label id="errorLabel"
+				 width="100%"
+				 textAlign="right"/>
+		<s:HGroup verticalAlign="middle" gap="12" >
+			<s:Button id="loginBtn" label="Login" />
+		</s:HGroup>
+		
+	</s:VGroup>
+	
+</s:View>
